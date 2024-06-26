@@ -1,0 +1,34 @@
+#Author: Mimansa Kant
+#Date: 6/26/24
+
+import random
+userMove = input("What move do you want to play?")
+computerNum = random.randint(1,3)
+userNum = 0
+
+while (userMove != "quit"):  
+  if userMove == "rock":
+    userNum = 1
+    break
+  elif userMove == "paper":
+    userNum = 2
+    break
+  elif userMove == "scissors":
+    userNum = 3
+    break
+  elif userMove == "quit":
+    break
+  else:
+    print("Enter rock, paper, or scissors please.")
+    userMove = input("What move do you want to play?")
+
+move = {1: "rock", 2: "paper", 3: "scissors"}
+
+if (computerNum > userNum & userNum != 1):
+  print(f"Computer wins! Computer played {move[computerNum]} and you played {move[userNum]}")
+  print("You lose!")
+elif (computerNum == userNum):
+  print(f"Tie! Computer played {move[computerNum]} and you played {move[userNum]}")
+else:
+  print(f"Computer played {move[computerNum]} and you played {move[userNum]}")
+  print("You win!")
